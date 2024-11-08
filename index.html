@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>互联网设备可视化平台</h1>
+        <div class="Showtime"></div>
+    </header>
+    <section class="mainbox">
+        <!-- 左侧盒子 -->
+        <div class="column">
+            <div class="pannel bar">
+                <h2>设备总揽</h2>
+                <div class="chart"></div>
+                <div class="pannel-footer"></div>
+            </div>
+            <div class="pannel pie">
+                <h2>设备提醒</h2>
+                <div class="chart"></div>
+                <div class="pannel-footer"></div>
+            </div>
+            <div class="pannel line">
+                <h2></h2>
+                <div class="chart">
+                    <div class="ab">
+                        <h4  style="color: aqua; text-align: center;"> >>>>>设备提醒 <<<<< </h4>
+                    <div class="dx">
+                        
+                        <span style="color:wheat;;">设备ID:</span><span style="color: blue;">10000</span>
+                    <span style="color:wheat;margin-left: 30px;">时间: 1990-02-28 19:46:50 </span> <span style="color: brown;margin-left: 30px;" >下线</span>
+                <div style="color: wheat;">地址：海南省/巴音郭蒙古自治州/其他区</div>  
+                <div style="color: blue;">--------------------------------------------------------------------------</div>  
+                </div>
+                <div class="dx">
+                        
+                    <span style="color:wheat;;">设备ID:</span><span style="color: blue;">10001</span>
+                <span style="color:wheat;margin-left: 30px;">时间: 1998-11-26 11:32:40 </span> <span style="color: brown;margin-left: 30px;" >下线</span>
+                <div style="color: wheat;">地址：甘肃省/锡林郭盟/道县</div>  
+                <div style="color: blue;">--------------------------------------------------------------------------</div>  
+                </div>
+                <div class="dx">
+                        
+                    <span style="color:wheat;;">设备ID:</span><span style="color: blue;">10002</span>
+                <span style="color:wheat;margin-left: 30px;">时间: 1990-02-28 19:46:50 </span> <span style="color:greenyellow;margin-left: 30px;" >上线</span>
+                <div style="color: wheat;">地址：四川省/焦作市/白玉区</div>  
+                <div style="color: blue;">--------------------------------------------------------------------------</div>  
+                </div>
+                <div class="dx">
+                        
+                    <span style="color:wheat;;">设备ID:</span><span style="color: blue;">10003</span>
+                <span style="color:wheat;margin-left: 30px;">时间: 1990-02-28 19:46:50 </span> <span style="color: brown;margin-left: 30px;" >下线</span>
+                <div style="color: wheat;">地址：宁夏回族自治区/武汉市/仙游县</div>  
+                <div style="color: blue;">--------------------------------------------------------------------------</div>  
+                </div>
+                   
+                </div>
+                </div>
+                <div class="pannel-footer"></div>
+            </div>
+        </div>
+        <!-- 中间盒子 -->
+        <div class="column">
+            <!-- 上边的数字模块 -->
+            <div class="number">
+            </div>
+            <!-- 下面的地图模块 -->
+            <div class="map">
+                <div class="map1">
+
+                </div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+        <!-- 右侧盒子 -->
+        <div class="column">
+            <div class="pannel line1">
+                <h2>报警次数</h2>
+                <div class="chart"></div>
+                <div class="pannel-footer"></div>
+            </div>
+            <div class="pannel bar1">
+                <h2>报警排名</h2>
+                <div class="chart"></div>
+                <div class="pannel-footer"></div>
+            </div>
+      
+            <div class="pannel pie1">
+                <h2>数据统计图</h2>
+                <div class="chart"></div>
+                <div class="pannel-footer"></div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./js/flexb.js"></script>
+<script src="./js/echarts.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/china.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    const Showtime = document.querySelector('.Showtime')
+    function show() {
+        const data = new Date()
+        let h = data.getHours()
+        let s = data.getSeconds()
+        let m = data.getMinutes()
+        h = h < 10 ? '0' + h : h
+        m = m < 10 ? '0' + m : m
+        s = s < 10 ? '0' + s : s
+        return `今天是:${data.getFullYear()}年${data.getMonth() + 1}月${data.getDate()}号 ${h}:${m}:${s}`
+    }
+    //函数返回值给div,定时器
+    Showtime.innerHTML = show()
+    setInterval(function () {
+        Showtime.innerHTML = show()
+    }, 1000
+
+    )
+</script>
+
+</html>

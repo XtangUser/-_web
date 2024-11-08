@@ -1,0 +1,379 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.15;
+    background-color: lightblue;
+}
+
+// 子绝父相
+header {
+    background-color: pink;
+    height: 1.25rem
+        /* 100/80 */
+    ;
+    position: relative;
+
+    h1 {
+        color: white;
+        font-size: .475rem
+            /* 38/80 */
+        ;
+        text-align: center;
+        line-height: 1rem
+            /* 80/80 */
+        ;
+
+    }
+
+    .Showtime {
+        position: absolute;
+        right: .375rem
+            /* 30/80 */
+        ;
+        top: .025rem
+            /* 2/80 */
+        ;
+        line-height: .9375rem
+            /* 75/80 */
+        ;
+        color: rgba(20, 129, 219, 0.7);
+        font-size: .25rem
+            /* 20/80 */
+        ;
+    }
+}
+
+.mainbox {
+    display: flex;
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: .125rem
+        /* 10/80 */
+        .125rem
+        /* 10/80 */
+        0;
+
+    .column {
+        flex: 3;
+
+        &:nth-child(2) {
+            flex: 5;
+            margin: 0 .125rem
+                /* 10/80 */
+                .1875rem
+                /* 15/80 */
+            ;
+            overflow: hidden;
+        }
+
+        .number {
+            background-color: rgba(101, 132, 226, 0.1);
+            padding: .1875rem
+                /* 15/80 */
+            ;
+            position: relative;
+
+            .number-hd {
+                border: .0125rem
+                    /* 1/80 */
+                    solid rgba(25, 186, 139, 0.8);
+
+                &::before {
+                    content: ' ';
+                    border-top: 2px solid #b50238;
+                    border-left: 2px solid #b50238;
+                    width: 30px;
+                    height: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                &::after {
+                    content: ' ';
+                    border-bottom: 2px solid #b50238;
+                    border-right: 2px solid #b50238;
+                    width: 30px;
+                    height: 10px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                ul {
+                    display: flex;
+                    position: relative;
+
+                    &:nth-child(1) {
+                        &::after {
+                            content: " ";
+                            position: absolute;
+                            top: 25%;
+                            left: 50%;
+                            background: rgba(25, 186, 139, 0.8);
+                            height: 50%;
+                            width: 1px;
+
+                        }
+                    }
+                }
+
+                li {
+
+                    height: 1rem
+                        /* 80/80 */
+                    ;
+                    line-height: 1rem
+                        /* 80/80 */
+                    ;
+                    font-size: .875rem
+                        /* 70/80 */
+                    ;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    color: #ffeb7b;
+                    list-style: none;
+                    text-align: center;
+                    flex: 1;
+
+                }
+
+
+            }
+
+        }
+    }
+}
+
+.number-bd {
+    ul {
+        display: flex;
+        padding-top: 10px;
+    }
+
+    li {
+
+        height: .5rem
+            /* 40/80 */
+
+        ;
+        line-height: .5rem
+            /* 40/80 */
+        ;
+        font-size: .25rem
+            /* 20/80 */
+        ;
+        color: rgba(255, 255, 255, 0.7);
+        list-style: none;
+        text-align: center;
+        flex: 1;
+
+    }
+}
+
+.pannel {
+    position: relative;
+    height: 3.875rem
+        /* 310/80 */
+    ;
+    border: .0125rem
+        /* 1/80 */
+        solid rgba(25, 186, 139, 0.17);
+    padding: 0 .1875rem
+        /* 15/80 */
+        .5rem
+        /* 40/80 */
+    ;
+    margin-bottom: .1875rem
+        /* 15/80 */
+    ;
+    background: rgba(255, 255, 255, 0.3);
+
+    &::before {
+        content: ' ';
+        border-top: 2px solid #b50238;
+        border-left: 2px solid #b50238;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        content: ' ';
+        border-top: 2px solid #b50238;
+        border-right: 2px solid #b50238;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .pannel-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+
+        &::before {
+            content: ' ';
+            border-bottom: 2px solid #b50238;
+            border-left: 2px solid #b50238;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &::after {
+            content: ' ';
+            border-bottom: 2px solid #b50238;
+            border-right: 2px solid #b50238;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    h2 {
+        height: .6rem
+            /* 48/80 */
+        ;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: .3125rem
+            /* 25/80 */
+        ;
+        line-height: .6rem
+            /* 48/80 */
+        ;
+        text-align: center;
+        font-weight: 600;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 .125rem
+                /* 10/80 */
+            ;
+
+        }
+    }
+
+    .chart {
+        height: 3rem
+            /* 240/80 */
+        ;
+        // background-color: pink;
+    }
+}
+
+.map {
+    height: 10.125rem
+        /* 810/80 */
+    ;
+    background-color: rgb(165, 204, 248);
+    position: relative;
+
+    .map1 {
+        height: 6.375rem
+            /* 510/80 */
+        ;
+        width: 6.375rem
+            /* 510/80 */
+        ;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        // 自身宽度高度的一半
+        transform: translate(-50%, -50%);
+        background: url(../image/map1.png);
+        background-size: 100% 100%;
+        opacity: 0.2;
+    }
+
+    .map2 {
+        height: 8.0375rem
+            /* 643/80 */
+        ;
+        width: 8.0375rem
+            /* 643/80 */
+        ;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        // 自身宽度高度的一半
+        transform: translate(-50%, -50%);
+        background: url(../image/map2.png);
+        background-size: 100% 100%;
+        opacity: 0.2;
+        animation: move1 15s linear infinite;
+    }
+
+    .map3 {
+        height: 7.075rem
+            /* 566/80 */
+        ;
+        width: 7.075rem
+            /* 566/80 */
+        ;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        // 自身宽度高度的一半
+        transform: translate(-50%, -50%);
+        background: url(../image/map3.png);
+        background-size: 100% 100%;
+        opacity: 0.4;
+        animation: move2 6s linear infinite;
+    }
+
+    .chart {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
+}
+
+@keyframes move1 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg)
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
+
+@keyframes move2 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg)
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
+
+/*约束屏幕尺寸*/
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 42px !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 80px !important;
+    }
+}
